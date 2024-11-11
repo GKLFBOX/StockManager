@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ストック管理アプリ</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 400px; margin: auto; }
+        .item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .item-name { flex: 1; }
+        .quantity { margin: 0 10px; }
+        button { padding: 8px 12px; font-size: 1em; }
+        #add-item { margin-top: 20px; display: flex; gap: 10px; flex-wrap: nowrap; align-items: center; }
+        #add-item input[type="text"], #add-item input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 1em;
+        }
+        #item-list { margin-top: 20px; }
+        .add-button { white-space: nowrap; }
+    </style>
+</head>
+<body>
+
+    <h1>ストック管理</h1>
+
+    <!-- アイテム追加フィールド -->
+    <div id="add-item">
+        <input type="text" id="item-name" placeholder="アイテム名" required>
+        <input type="number" id="item-quantity" placeholder="数量" value="1" min="1" required>
+        <button class="add-button" onclick="addItem()">追加</button>
+    </div>
+
+    <!-- ストックの項目リスト -->
+    <div id="item-list"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
